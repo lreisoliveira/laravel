@@ -36,6 +36,8 @@ Route::group(array('before'=>'auth'), function()
 # ROTAS PARA CLIENT
 #####################################################################################
 
+Route::get('/posts', 'PostController@index');
+
 // rota para client: chamando verbo get com pedido json
 Route::get('client-rest/get.json', 'ClientController@index');
 
@@ -49,3 +51,10 @@ Route::get('client-rest/get.xml', 'ClientController@index');
 // Route::get('home', 'HomeController@index');
 
 Route::get('/', 'WelcomeController@index');
+
+Route::get('/testando', 'WelcomeController@teste');
+
+
+Route::get('/teste', function(){
+	echo 'Exibindo a URL: '.Config::get('app.urls'). '<br /> Para a environment: '.app()->environment();
+});

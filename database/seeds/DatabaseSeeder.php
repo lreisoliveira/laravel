@@ -13,8 +13,20 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Model::unguard();
+		$this->call('TesteTableSeeder');
+	}
 
-		// $this->call('UserTableSeeder');
+}
+
+class TesteTableSeeder extends Seeder {
+
+	public function run()
+	{
+		//DB::table('teste')->delete();
+		Teste::create([
+				'email'=>'Página inicial',
+				'token'=>'Criado com Laravel',
+		]);
 	}
 
 }

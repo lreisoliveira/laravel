@@ -26,7 +26,7 @@ return [
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'mysql_local',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,15 +54,30 @@ return [
 
 		'mysql' => [
 			'driver'    => 'mysql',
-			'host'      => env('DB_HOST', 'localhost'),
-			'database'  => env('DB_DATABASE', 'forge'),
-			'username'  => env('DB_USERNAME', 'forge'),
-			'password'  => env('DB_PASSWORD', ''),
+			'host'      => env('DB_HOST', '192.168.33.10'),
+			'database'  => env('DB_DATABASE', 'migra1'),
+			'username'  => env('DB_USERNAME', 'root'),
+			'password'  => env('DB_PASSWORD', 'root'),
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 			'strict'    => false,
+			'unix_socket'   => '/var/run/mysqld/mysqld.sock',
 		],
+			
+		'mysql_local' => [
+				'driver'    => 'mysql',
+				'host'      => env('DB_HOST', 'localhost'),
+				'database'  => env('DB_DATABASE', 'teste'),
+				'username'  => env('DB_USERNAME', 'root'),
+				'password'  => env('DB_PASSWORD', 'root'),
+				'charset'   => 'utf8',
+				'collation' => 'utf8_unicode_ci',
+				'prefix'    => '',
+				'strict'    => false,
+				'unix_socket'   => '/var/run/mysqld/mysqld.sock',
+		],
+				
 
 		'pgsql' => [
 			'driver'   => 'pgsql',
