@@ -19,7 +19,8 @@ class PostController extends Controller
 	
 	public function index()
     {
-		$posts = $this->post->all();
+		//dd($this->app->make('LogService'));
+    	$posts = $this->post->all();
     	return view('post.index')->with('posts',$posts);	
 	}
 
